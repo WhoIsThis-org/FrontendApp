@@ -1,4 +1,7 @@
 import './App.css';
+import POAPs from './component/Dashboard/Holdings/POAPs';
+ import NFTs from './component/Dashboard/Holdings/NFTs';
+ import Tokens from './component/Dashboard/Holdings/Tokens';
 
 function App() {
   return (
@@ -6,9 +9,9 @@ function App() {
       {/* See Your Output Here ! */}
 
 
-      <h1 className="text-2xl font-bold underline">
-        Hello world!
-      </h1>
+      <NFTs/> 
+      <Tokens/> 
+      <POAPs/>
 
 
 
