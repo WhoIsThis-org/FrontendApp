@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const Tokens = () => {
+const Tokens = (props) => {
     let [items, setItems] = useState([]);
+    const uri = "https://api.covalenthq.com/v1/1/address/" + props.address + "/balances_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=ckey_d452e85367ae400b874ea3bdd3b"
     const getTokens = async () => {
 
         fetch(
-            "https://api.covalenthq.com/v1/1/address/ftnikhil.eth/balances_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=ckey_d452e85367ae400b874ea3bdd3b",
+            uri,
         )
             .then((response) => {
                 return response.json();

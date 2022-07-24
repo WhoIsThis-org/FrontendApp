@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-const NFTs = () => {
+const NFTs = (props) => {
     let [users, setUsers] = useState([]);
+
+    const uri = "https://api.nftport.xyz/v0/accounts/" + props.address + "?chain=polygon&include=metadata"
 
     const getNfts = async () => {
         fetch(
-            "https://api.nftport.xyz/v0/accounts/0x33942C2eDA77EB45B8420F86E9f2f8d97f127883?chain=polygon&include=metadata",
+            uri,
             {
                 method: "GET",
                 headers: {
@@ -33,6 +35,7 @@ const NFTs = () => {
     return (
         <>
             <section className="text-gray-600 body-font">
+                {uri}
                 <div className="flex flex-wrap -m-4">
                     {users.map((currlem) => {
                         if (currlem.file_url != "") {

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const POAPs = () => {
+const POAPs = (props) => {
     let [tokens, mytokens] = useState([]);
+
+    const uri = "https://api.poap.tech/actions/scan/" + props.address
     const Popas = async () => {
         fetch(
-            "https://api.poap.tech/actions/scan/ftnikhil.eth",
+            uri,
 
         )
             .then((response) => {

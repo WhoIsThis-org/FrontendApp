@@ -3,7 +3,7 @@ import NFTs from "./NFTs";
 import POAPs from "./POAPs";
 import Tokens from "./Tokens";
 
-const Tabs = () => {
+export default function Tabs(props) {
     const [openTab, setOpenTab] = React.useState(1);
     return (
         <>
@@ -75,13 +75,13 @@ const Tabs = () => {
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space">
                                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                                    <NFTs />
+                                    <NFTs address={props.address} />
                                 </div>
                                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                                    <POAPs />
+                                    <POAPs address={props.address} />
                                 </div>
                                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                                    <Tokens />
+                                    <Tokens address={props.address} />
                                 </div>
                             </div>
                         </div>
@@ -92,10 +92,3 @@ const Tabs = () => {
     );
 };
 
-export default function TabsRender() {
-    return (
-        <>
-            <Tabs />
-        </>
-    );
-}
